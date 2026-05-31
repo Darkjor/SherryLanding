@@ -1,0 +1,44 @@
+---
+import SectionLabel from './ui/SectionLabel.astro';
+import GoldDivider from './ui/GoldDivider.astro';
+import Button from './ui/Button.astro';
+import { gestures } from '../data/gestures';
+---
+
+<section id="experiencia" class="section-padding bg-burgundy">
+  <div class="container-sherry">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <SectionLabel class="text-gold opacity-70">El ritual de bienvenida</SectionLabel>
+      <h2 class="font-serif text-4xl md:text-5xl text-bone leading-tight max-w-2xl mx-auto">
+        Los cinco gestos que definen cada visita.
+      </h2>
+      <GoldDivider class="mx-auto" />
+      <p class="font-garamond text-lg text-bone opacity-70 max-w-xl mx-auto">
+        Desde que cruzas la puerta, cada detalle está diseñado con intención.
+      </p>
+    </div>
+
+    <!-- Gestures -->
+    <div class="max-w-content mx-auto space-y-0">
+      {gestures.map((gesture, index) => (
+        <div class={`flex gap-8 items-start py-8 border-b border-bone border-opacity-10 ${index === gestures.length - 1 ? 'border-b-0' : ''}`}>
+          <!-- Number -->
+          <div class="flex-shrink-0 w-14 text-right">
+            <span class="font-serif text-3xl text-gold opacity-50">{gesture.number}</span>
+          </div>
+          <!-- Content -->
+          <div class="flex-1">
+            <h3 class="font-serif text-xl text-bone mb-2">{gesture.name}</h3>
+            <p class="font-garamond text-base text-bone opacity-70 leading-relaxed">{gesture.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <Button href="#cta" variant="ghost">Reserva tu primera visita</Button>
+    </div>
+  </div>
+</section>

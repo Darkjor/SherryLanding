@@ -1,0 +1,44 @@
+---
+import SectionLabel from './ui/SectionLabel.astro';
+import GoldDivider from './ui/GoldDivider.astro';
+
+const attributes = [
+  {
+    number: '01',
+    title: 'La experiencia',
+    body: 'Cada visita está diseñada como un ritual de cinco gestos: bienvenida personal, aromatización, beverage, acompañamiento y atención especializada. Nada es accidental.',
+  },
+  {
+    number: '02',
+    title: 'El espacio',
+    body: 'Arquitectura como mensaje de marca. Mármol, terciopelo burgundy, latón envejecido e iluminación cálida 2700K. Un entorno que comunica sofisticación antes de que nadie hable.',
+  },
+  {
+    number: '03',
+    title: 'Las personas',
+    body: 'Nuestras especialistas son anfitrionas formadas en hospitalidad premium. No son técnicas — son la marca. Cada gesto, cada palabra, cada silencio es intencional.',
+  },
+];
+---
+
+<section class="section-padding bg-bone">
+  <div class="container-sherry">
+    <div class="text-center mb-16">
+      <SectionLabel>Qué es Sherry</SectionLabel>
+      <h2 class="font-serif text-4xl md:text-5xl text-burgundy max-w-2xl mx-auto leading-tight">
+        No somos un salón. Somos una experiencia.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+      {attributes.map((attr) => (
+        <div class="group text-center">
+          <p class="font-serif text-5xl text-gold opacity-40 mb-4">{attr.number}</p>
+          <GoldDivider class="mx-auto w-8" />
+          <h3 class="font-serif text-2xl text-burgundy mb-4">{attr.title}</h3>
+          <p class="font-garamond text-base text-gris leading-relaxed">{attr.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

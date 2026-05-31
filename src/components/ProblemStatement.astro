@@ -1,0 +1,33 @@
+---
+import SectionLabel from './ui/SectionLabel.astro';
+import GoldDivider from './ui/GoldDivider.astro';
+---
+
+<section class="section-padding bg-bone-dark">
+  <div class="container-sherry">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left: The question -->
+      <div>
+        <SectionLabel>La pregunta</SectionLabel>
+        <h2 class="font-serif text-4xl md:text-5xl text-burgundy leading-tight mb-6">
+          ¿Cuándo fue la última vez que un lugar te hizo sentir exactamente como mereces?
+        </h2>
+        <GoldDivider />
+        <p class="font-garamond text-lg text-gris leading-relaxed">
+          No hablamos del resultado técnico. Hablamos de cómo te sentiste al entrar, al ser recibida, al salir.
+        </p>
+      </div>
+
+      <!-- Right: Context -->
+      <div class="space-y-6">
+        <p class="font-garamond text-xl text-burgundy leading-relaxed italic">
+          "El lujo no se mide en el precio. Se mide en la atención al detalle, en la coherencia de cada elemento, en la presencia de una intención detrás de cada gesto."
+        </p>
+        <div class="w-10 h-px bg-gold"></div>
+        <p class="font-garamond text-base text-gris leading-relaxed">
+          En Zapopan existe una brecha entre lo que las mujeres merecen y lo que el mercado ha ofrecido. Sherry cierra esa brecha — sin concesiones.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

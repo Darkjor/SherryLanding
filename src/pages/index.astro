@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import Hero from '../components/Hero.astro';
+import ProblemStatement from '../components/ProblemStatement.astro';
+import Solution from '../components/Solution.astro';
+import Experience from '../components/Experience.astro';
+import Services from '../components/Services.astro';
+import Memberships from '../components/Memberships.astro';
+import Philosophy from '../components/Philosophy.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Sherry ✦ Luxury Beauty House | Zapopan, Jalisco"
+  description="Donde la belleza se convierte en ritual. Experiencias de belleza premium con estándares de hospitalidad internacional en Zapopan, Jalisco."
+>
+  <NavBar />
+  <main>
+    <Hero />
+    <ProblemStatement />
+    <Solution />
+    <Experience />
+    <Services />
+    <Memberships />
+    <Philosophy />
+    <Testimonials />
+    <FAQ />
+    <FinalCTA />
+  </main>
+  <Footer />
+</BaseLayout>

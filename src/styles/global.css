@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bone text-gris font-garamond;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-burgundy;
+  }
+
+  ::selection {
+    @apply bg-burgundy text-bone;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-24 px-6 lg:px-10;
+  }
+
+  .container-sherry {
+    @apply max-w-container mx-auto px-6 lg:px-10;
+  }
+
+  .label-sherry {
+    @apply font-sans text-xs tracking-widest uppercase text-gris;
+  }
+}

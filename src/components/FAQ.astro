@@ -1,0 +1,65 @@
+---
+import SectionLabel from './ui/SectionLabel.astro';
+import GoldDivider from './ui/GoldDivider.astro';
+import { faqItems } from '../data/faq';
+---
+
+<section id="faq" class="section-padding bg-bone-dark">
+  <div class="container-sherry max-w-content">
+    <div class="text-center mb-16">
+      <SectionLabel>Preguntas frecuentes</SectionLabel>
+      <h2 class="font-serif text-4xl md:text-5xl text-burgundy leading-tight">
+        Todo lo que necesitas saber.
+      </h2>
+      <GoldDivider class="mx-auto" />
+    </div>
+
+    <div class="space-y-2" id="faq-list">
+      {faqItems.map((item, index) => (
+        <div class="faq-item border border-bone" data-index={index}>
+          <button
+            class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left group"
+            aria-expanded="false"
+          >
+            <span class="font-garamond text-lg text-burgundy group-hover:text-burgundy-light transition-colors pr-6">
+              {item.question}
+            </span>
+            <span class="faq-icon flex-shrink-0 text-gold font-sans text-xl leading-none transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="font-garamond text-base text-gris leading-relaxed">{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const trigger = item.querySelector('.faq-trigger') as HTMLButtonElement;
+    const answer = item.querySelector('.faq-answer') as HTMLElement;
+    const icon = item.querySelector('.faq-icon') as HTMLElement;
+
+    trigger?.addEventListener('click', () => {
+      const isOpen = !answer.classList.contains('hidden');
+
+      // Close all others
+      document.querySelectorAll('.faq-item').forEach((other) => {
+        const otherAnswer = other.querySelector('.faq-answer') as HTMLElement;
+        const otherIcon = other.querySelector('.faq-icon') as HTMLElement;
+        const otherTrigger = other.querySelector('.faq-trigger') as HTMLButtonElement;
+        otherAnswer?.classList.add('hidden');
+        if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+        otherTrigger?.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current
+      if (!isOpen) {
+        answer.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(45deg)';
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

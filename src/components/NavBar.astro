@@ -1,0 +1,89 @@
+---
+// No props needed
+---
+
+<header
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 bg-bone border-b border-bone-dark transition-shadow duration-300"
+>
+  <div class="container-sherry flex items-center justify-between h-16 lg:h-20">
+    <!-- Logo -->
+    <a href="#hero" class="font-serif text-xl lg:text-2xl text-burgundy tracking-wide hover:text-burgundy-light transition-colors">
+      Sherry ✦
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-10">
+      <a href="#experiencia" class="label-sherry hover:text-burgundy transition-colors">La Experiencia</a>
+      <a href="#servicios" class="label-sherry hover:text-burgundy transition-colors">Servicios</a>
+      <a href="#membresias" class="label-sherry hover:text-burgundy transition-colors">Membresías</a>
+      <a href="#faq" class="label-sherry hover:text-burgundy transition-colors">FAQ</a>
+    </nav>
+
+    <!-- CTA + Mobile toggle -->
+    <div class="flex items-center gap-4">
+      <a
+        href="#cta"
+        class="hidden lg:inline-block font-sans text-xs tracking-widest uppercase px-6 py-3 bg-burgundy text-bone hover:bg-burgundy-light transition-colors"
+      >
+        Reserva Ahora
+      </a>
+      <button
+        id="menu-toggle"
+        class="lg:hidden flex flex-col gap-1.5 p-2"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <span class="block w-6 h-px bg-burgundy transition-all"></span>
+        <span class="block w-6 h-px bg-burgundy transition-all"></span>
+        <span class="block w-4 h-px bg-burgundy transition-all"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-bone border-t border-bone-dark px-6 py-6">
+    <nav class="flex flex-col gap-6 mb-6">
+      <a href="#experiencia" class="label-sherry hover:text-burgundy transition-colors">La Experiencia</a>
+      <a href="#servicios" class="label-sherry hover:text-burgundy transition-colors">Servicios</a>
+      <a href="#membresias" class="label-sherry hover:text-burgundy transition-colors">Membresías</a>
+      <a href="#faq" class="label-sherry hover:text-burgundy transition-colors">FAQ</a>
+    </nav>
+    <a
+      href="#cta"
+      class="inline-block font-sans text-xs tracking-widest uppercase px-6 py-3 bg-burgundy text-bone hover:bg-burgundy-light transition-colors w-full text-center"
+    >
+      Reserva Ahora
+    </a>
+  </div>
+</header>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // Scroll shadow
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar?.classList.add('shadow-md');
+    } else {
+      navbar?.classList.remove('shadow-md');
+    }
+  });
+
+  // Mobile menu toggle
+  toggle?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.contains('hidden');
+    mobileMenu?.classList.toggle('hidden', !isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close mobile menu on link click
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
