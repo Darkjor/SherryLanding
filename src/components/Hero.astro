@@ -3,7 +3,7 @@ import Button from './ui/Button.astro';
 import GoldDivider from './ui/GoldDivider.astro';
 ---
 
-<section id="hero" class="min-h-screen bg-bone flex items-center justify-center pt-20">
+<section id="hero" class="min-h-screen bg-bone flex items-center justify-center pt-16 lg:pt-20">
   <div class="container-sherry text-center max-w-content py-24">
     <!-- Eyebrow label -->
     <p class="font-sans text-xs tracking-widest uppercase text-gold mb-8">
@@ -11,8 +11,8 @@ import GoldDivider from './ui/GoldDivider.astro';
     </p>
 
     <!-- Main headline -->
-    <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-burgundy leading-tight mb-6">
-      Where Beauty<br />Becomes Ritual
+    <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-burgundy leading-tight mb-6 text-balance">
+      Where Beauty Becomes Ritual
       <span class="text-gold">✦</span>
     </h1>
 
@@ -27,7 +27,7 @@ import GoldDivider from './ui/GoldDivider.astro';
     </p>
 
     <!-- CTAs -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
       <Button href="#cta" variant="primary">Reserva tu primer ritual</Button>
       <Button href="#membresias" variant="secondary">Ver membresías</Button>
     </div>
@@ -35,7 +35,7 @@ import GoldDivider from './ui/GoldDivider.astro';
     <!-- Scroll indicator -->
     <div class="mt-20 flex flex-col items-center gap-2 opacity-50">
       <span class="label-sherry">Descubre</span>
-      <div class="w-px h-12 bg-gris animate-bounce"></div>
+      <div class="w-px h-12 bg-gris-dark animate-bounce"></div>
     </div>
   </div>
 </section>

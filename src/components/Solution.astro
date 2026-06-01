@@ -30,11 +30,11 @@ const attributes = [
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+    <div class="grid md:grid-cols-3 gap-10 md:gap-12 lg:gap-16">
       {attributes.map((attr) => (
         <div class="group text-center">
-          <p class="font-serif text-5xl text-gold opacity-40 mb-4">{attr.number}</p>
-          <GoldDivider class="mx-auto w-8" />
+          <p class="font-serif text-6xl lg:text-7xl leading-none text-gold opacity-40 mb-2">{attr.number}</p>
+          <GoldDivider class="mx-auto w-8 my-3" />
           <h3 class="font-serif text-2xl text-burgundy mb-4">{attr.title}</h3>
           <p class="font-garamond text-base text-gris leading-relaxed">{attr.body}</p>
         </div>

@@ -21,6 +21,8 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og-image.jpg" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>{title}</title>
     <script type="application/ld+json">
       {
@@ -41,5 +43,28 @@ const {
   </head>
   <body>
     <slot />
+    <script>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.08 }
+        );
+        sections.forEach((section) => {
+          section.style.opacity = '0';
+          section.style.transform = 'translateY(20px)';
+          section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+          observer.observe(section);
+        });
+      }
+    </script>
   </body>
 </html>

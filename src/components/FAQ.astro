@@ -16,17 +16,17 @@ import { faqItems } from '../data/faq';
 
     <div class="space-y-2" id="faq-list">
       {faqItems.map((item, index) => (
-        <div class="faq-item border border-bone" data-index={index}>
+        <div class="faq-item border border-bone-dark" data-index={index}>
           <button
-            class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left group"
+            class="faq-trigger w-full flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left group"
             aria-expanded="false"
           >
             <span class="font-garamond text-lg text-burgundy group-hover:text-burgundy-light transition-colors pr-6">
               {item.question}
             </span>
-            <span class="faq-icon flex-shrink-0 text-gold font-sans text-xl leading-none transition-transform duration-300">+</span>
+            <span class="faq-icon flex-shrink-0 text-gold font-sans text-2xl leading-none transition-transform duration-300">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6">
+          <div class="faq-answer hidden px-4 sm:px-6 pb-4 sm:pb-6">
             <p class="font-garamond text-base text-gris leading-relaxed">{item.answer}</p>
           </div>
         </div>

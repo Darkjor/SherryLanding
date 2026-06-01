@@ -22,9 +22,9 @@ import { gestures } from '../data/gestures';
     <!-- Gestures -->
     <div class="max-w-content mx-auto space-y-0">
       {gestures.map((gesture, index) => (
-        <div class={`flex gap-8 items-start py-8 border-b border-bone border-opacity-10 ${index === gestures.length - 1 ? 'border-b-0' : ''}`}>
+        <div class={`flex flex-col sm:flex-row gap-4 sm:gap-8 items-start py-8 border-b border-bone border-opacity-10 ${index === 0 ? 'pt-0' : ''} ${index === gestures.length - 1 ? 'border-b-0 pb-0' : ''}`}>
           <!-- Number -->
-          <div class="flex-shrink-0 w-14 text-right">
+          <div class="flex-shrink-0 w-10 sm:w-14 text-right">
             <span class="font-serif text-3xl text-gold opacity-50">{gesture.number}</span>
           </div>
           <!-- Content -->

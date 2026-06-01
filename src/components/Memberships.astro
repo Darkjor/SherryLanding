@@ -18,17 +18,17 @@ import { memberships } from '../data/memberships';
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+    <div class="grid md:grid-cols-3 gap-8 lg:gap-10 items-end overflow-visible">
       {memberships.map((membership) => (
         <div
           class={`relative flex flex-col p-8 lg:p-10 transition-all duration-300 ${
             membership.recommended
-              ? 'bg-burgundy text-bone shadow-2xl shadow-burgundy/30 scale-105 z-10'
+              ? 'bg-burgundy text-bone shadow-2xl shadow-burgundy/30 md:scale-105 z-10'
               : 'bg-white border border-bone-dark hover:border-gold'
           }`}
         >
           {membership.recommended && (
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <div class="absolute -top-5 left-1/2 -translate-x-1/2">
               <span class="bg-gold text-burgundy font-sans text-xs tracking-widest uppercase px-5 py-1.5 whitespace-nowrap font-semibold">
                 Más popular
               </span>

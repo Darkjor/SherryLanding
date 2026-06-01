@@ -8,7 +8,7 @@ import { principles } from '../data/philosophy';
   <div class="container-sherry">
     <div class="grid lg:grid-cols-2 gap-16 items-start">
       <!-- Left: Header -->
-      <div class="lg:sticky lg:top-32">
+      <div class="lg:sticky lg:top-24 self-start">
         <SectionLabel>Filosofía</SectionLabel>
         <h2 class="font-serif text-4xl md:text-5xl text-burgundy leading-tight mb-6">
           Los cinco pilares de Sherry.
@@ -23,7 +23,7 @@ import { principles } from '../data/philosophy';
       <div class="space-y-10">
         {principles.map((principle) => (
           <div class="flex gap-6 items-start group">
-            <span class="font-serif text-4xl text-gold opacity-30 flex-shrink-0 leading-none mt-1">{principle.number}</span>
+            <span class="font-serif text-4xl text-gold opacity-40 flex-shrink-0 leading-none mt-1">{principle.number}</span>
             <div>
               <h3 class="font-serif text-xl text-burgundy mb-3 italic">{principle.title}</h3>
               <p class="font-garamond text-base text-gris leading-relaxed">{principle.body}</p>

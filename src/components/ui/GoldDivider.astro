@@ -2,8 +2,9 @@
 interface Props {
   class?: string;
   width?: string;
+  margin?: string;
 }
-const { class: className = '', width = 'w-14' } = Astro.props;
+const { class: className = '', width = 'w-14', margin = 'my-6' } = Astro.props;
 ---
 
-<div class={`${width} h-px bg-gold my-6 ${className}`} role="presentation" aria-hidden="true"></div>
+<div class={`${width} h-px bg-gold ${margin} ${className}`} role="presentation" aria-hidden="true"></div>
