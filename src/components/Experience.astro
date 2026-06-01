@@ -10,11 +10,11 @@ import { gestures } from '../data/gestures';
     <!-- Header -->
     <div class="text-center mb-16">
       <SectionLabel class="text-gold opacity-70">El ritual de bienvenida</SectionLabel>
-      <h2 class="font-serif text-4xl md:text-5xl text-bone leading-tight max-w-2xl mx-auto">
+      <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-bone leading-tight max-w-2xl mx-auto">
         Los cinco gestos que definen cada visita.
       </h2>
       <GoldDivider class="mx-auto" />
-      <p class="font-garamond text-lg text-bone opacity-70 max-w-xl mx-auto">
+      <p class="font-garamond text-sm sm:text-base md:text-lg text-bone opacity-70 max-w-xl mx-auto break-words">
         Desde que cruzas la puerta, cada detalle está diseñado con intención.
       </p>
     </div>
@@ -28,9 +28,9 @@ import { gestures } from '../data/gestures';
             <span class="font-serif text-3xl text-gold opacity-50">{gesture.number}</span>
           </div>
           <!-- Content -->
-          <div class="flex-1">
-            <h3 class="font-serif text-xl text-bone mb-2">{gesture.name}</h3>
-            <p class="font-garamond text-base text-bone opacity-70 leading-relaxed">{gesture.description}</p>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-serif text-base sm:text-lg md:text-xl text-bone mb-2 break-words">{gesture.name}</h3>
+            <p class="font-garamond text-base text-bone opacity-70 leading-relaxed break-words">{gesture.description}</p>
           </div>
         </div>
       ))}

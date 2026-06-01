@@ -10,11 +10,11 @@ import { principles } from '../data/philosophy';
       <!-- Left: Header -->
       <div class="lg:sticky lg:top-24 self-start">
         <SectionLabel>Filosofía</SectionLabel>
-        <h2 class="font-serif text-4xl md:text-5xl text-burgundy leading-tight mb-6">
+        <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-burgundy leading-tight mb-6">
           Los cinco pilares de Sherry.
         </h2>
         <GoldDivider />
-        <p class="font-garamond text-lg text-gris leading-relaxed">
+        <p class="font-garamond text-sm sm:text-base md:text-lg text-gris leading-relaxed break-words">
           No son reglas. Son convicciones. La diferencia entre un buen lugar y una experiencia que no se olvida.
         </p>
       </div>
@@ -24,8 +24,8 @@ import { principles } from '../data/philosophy';
         {principles.map((principle) => (
           <div class="flex gap-6 items-start group">
             <span class="font-serif text-4xl text-gold opacity-40 flex-shrink-0 leading-none mt-1">{principle.number}</span>
-            <div>
-              <h3 class="font-serif text-xl text-burgundy mb-3 italic">{principle.title}</h3>
+            <div class="min-w-0">
+              <h3 class="font-serif text-base sm:text-lg md:text-xl text-burgundy mb-3 italic break-words">{principle.title}</h3>
               <p class="font-garamond text-base text-gris leading-relaxed">{principle.body}</p>
             </div>
           </div>

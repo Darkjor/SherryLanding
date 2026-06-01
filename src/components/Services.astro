@@ -9,7 +9,7 @@ import { services } from '../data/services';
   <div class="container-sherry">
     <div class="text-center mb-16">
       <SectionLabel>Nuestros rituales</SectionLabel>
-      <h2 class="font-serif text-4xl md:text-5xl text-burgundy max-w-2xl mx-auto leading-tight">
+      <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-burgundy max-w-2xl mx-auto leading-tight">
         Cada servicio, una experiencia diseñada.
       </h2>
       <GoldDivider class="mx-auto" />
@@ -17,10 +17,10 @@ import { services } from '../data/services';
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {services.map((service) => (
-        <div class="bg-bone border border-bone-dark p-6 lg:p-8 flex flex-col group hover:border-gold hover:shadow-md hover:shadow-burgundy/10 transition-shadow duration-300 transition-colors duration-300">
+        <div class="bg-bone border border-bone-dark p-4 sm:p-6 lg:p-8 flex flex-col group hover:border-gold hover:shadow-md hover:shadow-burgundy/10 transition-shadow duration-300 transition-colors duration-300">
           <p class="label-sherry text-gold mb-4">{service.frequency}</p>
-          <h3 class="font-serif text-xl text-burgundy mb-3">{service.name}</h3>
-          <p class="font-garamond text-base text-gris leading-relaxed flex-1 mb-6">{service.description}</p>
+          <h3 class="font-serif text-lg sm:text-xl text-burgundy mb-3 break-words">{service.name}</h3>
+          <p class="font-garamond text-base text-gris leading-relaxed flex-1 mb-6 break-words">{service.description}</p>
           <div class="flex items-center justify-between">
             <span class="font-sans text-sm text-burgundy font-semibold tracking-wide">{service.priceRange} <span class="font-normal text-gris text-xs">MXN</span></span>
           </div>

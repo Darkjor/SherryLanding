@@ -25,7 +25,7 @@ const attributes = [
   <div class="container-sherry">
     <div class="text-center mb-16">
       <SectionLabel>Qué es Sherry</SectionLabel>
-      <h2 class="font-serif text-4xl md:text-5xl text-burgundy max-w-2xl mx-auto leading-tight">
+      <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-burgundy max-w-2xl mx-auto leading-tight">
         No somos un salón. Somos una experiencia.
       </h2>
     </div>
@@ -33,10 +33,10 @@ const attributes = [
     <div class="grid md:grid-cols-3 gap-10 md:gap-12 lg:gap-16">
       {attributes.map((attr) => (
         <div class="group text-center">
-          <p class="font-serif text-6xl lg:text-7xl leading-none text-gold opacity-40 mb-2">{attr.number}</p>
+          <p class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-none text-gold opacity-40 mb-2">{attr.number}</p>
           <GoldDivider class="mx-auto w-8 my-3" />
-          <h3 class="font-serif text-2xl text-burgundy mb-4">{attr.title}</h3>
-          <p class="font-garamond text-base text-gris leading-relaxed">{attr.body}</p>
+          <h3 class="font-serif text-lg sm:text-xl md:text-2xl text-burgundy mb-4 break-words">{attr.title}</h3>
+          <p class="font-garamond text-base text-gris leading-relaxed break-words">{attr.body}</p>
         </div>
       ))}
     </div>

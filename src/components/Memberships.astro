@@ -9,16 +9,16 @@ import { memberships } from '../data/memberships';
   <div class="container-sherry">
     <div class="text-center mb-16">
       <SectionLabel>Membresías Sherry</SectionLabel>
-      <h2 class="font-serif text-4xl md:text-5xl text-burgundy max-w-2xl mx-auto leading-tight">
+      <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-burgundy max-w-2xl mx-auto leading-tight">
         Tu ritual, todos los meses.
       </h2>
       <GoldDivider class="mx-auto" />
-      <p class="font-garamond text-lg text-gris max-w-xl mx-auto">
+      <p class="font-garamond text-sm sm:text-base md:text-lg text-gris max-w-xl mx-auto break-words">
         Elige el nivel que se adapta a ti. Sin contratos. Sin compromisos forzosos.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8 lg:gap-10 items-end overflow-visible">
+    <div class="grid md:grid-cols-3 gap-8 lg:gap-10 items-end overflow-visible min-w-0">
       {memberships.map((membership) => (
         <div
           class={`relative flex flex-col p-8 lg:p-10 transition-all duration-300 ${
@@ -41,7 +41,7 @@ import { memberships } from '../data/memberships';
               {membership.name}
             </p>
             <div class="flex items-baseline gap-1 mb-2">
-              <span class={`font-serif text-4xl ${membership.recommended ? 'text-gold' : 'text-burgundy'}`}>
+              <span class={`font-serif text-2xl sm:text-3xl md:text-4xl ${membership.recommended ? 'text-gold' : 'text-burgundy'}`}>
                 {membership.priceDisplay}
               </span>
               <span class={`font-garamond text-sm ${membership.recommended ? 'text-bone opacity-70' : 'text-gris'}`}>
@@ -58,7 +58,7 @@ import { memberships } from '../data/memberships';
           <!-- Benefits -->
           <ul class="space-y-3 flex-1 mb-8">
             {membership.benefits.map((benefit) => (
-              <li class={`flex items-start gap-3 font-garamond text-sm leading-relaxed ${
+              <li class={`flex items-start gap-3 font-garamond text-sm leading-relaxed break-words ${
                 membership.recommended ? 'text-bone' : 'text-gris'
               }`}>
                 <span class="text-gold mt-0.5 flex-shrink-0">✦</span>

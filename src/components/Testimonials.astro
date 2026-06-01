@@ -14,7 +14,7 @@ const stats = [
   <div class="container-sherry">
     <div class="text-center mb-16">
       <SectionLabel>Lo que dicen</SectionLabel>
-      <h2 class="font-serif text-4xl md:text-5xl text-burgundy max-w-2xl mx-auto leading-tight">
+      <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-burgundy max-w-2xl mx-auto leading-tight">
         Las palabras de quienes ya viven el ritual.
       </h2>
       <GoldDivider class="mx-auto" />
@@ -24,7 +24,7 @@ const stats = [
     <!-- TODO: Replace placeholder quotes with real client testimonials before launch -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
       {testimonials.map((t) => (
-        <div class="bg-bone-dark border border-bone-dark p-8 flex flex-col">
+        <div class="bg-bone-dark border border-bone-dark p-4 sm:p-6 lg:p-8 flex flex-col">
           <!-- Stars -->
           <div class="flex gap-1 mb-6">
             {Array.from({ length: t.rating }).map(() => (
@@ -32,7 +32,7 @@ const stats = [
             ))}
           </div>
           <!-- Quote -->
-          <blockquote class="font-garamond text-base text-gris leading-relaxed italic flex-1 mb-6">
+          <blockquote class="font-garamond text-base text-gris leading-relaxed italic flex-1 mb-6 break-words">
             "{t.quote}"
           </blockquote>
           <!-- Author -->
@@ -41,7 +41,7 @@ const stats = [
             <div class="w-10 h-10 rounded-full bg-burgundy flex items-center justify-center flex-shrink-0">
               <span class="font-serif text-bone text-sm">{t.name[0]}</span>
             </div>
-            <div>
+            <div class="min-w-0 break-words">
               <p class="font-sans text-xs font-semibold text-burgundy tracking-wide">{t.name}</p>
               <p class="label-sherry text-gris-light">{t.role}</p>
             </div>

@@ -7,6 +7,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -15,6 +16,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif text-burgundy;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   ::selection {
@@ -24,11 +27,11 @@
 
 @layer utilities {
   .section-padding {
-    @apply py-16 lg:py-24 px-6 lg:px-10;
+    @apply py-16 lg:py-24 px-4 sm:px-6 lg:px-10;
   }
 
   .container-sherry {
-    @apply max-w-container mx-auto px-6 lg:px-10;
+    @apply max-w-container mx-auto px-4 sm:px-6 lg:px-10;
   }
 
   .label-sherry {

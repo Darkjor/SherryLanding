@@ -1,7 +1,7 @@
 ---
 ---
 
-<footer class="bg-burgundy-dark border-t border-bone border-opacity-10 border-t border-gold/20 py-16 px-6 lg:px-10">
+<footer class="bg-burgundy-dark border-t border-bone border-opacity-10 border-t border-gold/20 py-16 px-4 sm:px-6 lg:px-10">
   <div class="container-sherry">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
 
@@ -21,7 +21,7 @@
         <p class="font-sans text-xs tracking-widest uppercase text-gold opacity-60 mb-5">Rituales</p>
         <ul class="space-y-2.5">
           {['Gelish & Color en Gel', 'Uñas Esculturales', 'Manicure Coreana', 'Pedicure con Ritual', 'Tratamientos Capilares', 'Sherry At Home'].map(s => (
-            <li><a href="#servicios" class="font-garamond text-sm text-bone opacity-50 hover:opacity-90 transition-opacity focus-visible:opacity-100 focus-visible:outline-none focus-visible:underline focus-visible:decoration-gold">{s}</a></li>
+            <li><a href="#servicios" class="font-garamond text-sm text-bone opacity-50 hover:opacity-90 transition-opacity break-words focus-visible:opacity-100 focus-visible:outline-none focus-visible:underline focus-visible:decoration-gold">{s}</a></li>
           ))}
         </ul>
       </div>
@@ -31,7 +31,7 @@
         <p class="font-sans text-xs tracking-widest uppercase text-gold opacity-60 mb-5">La Casa</p>
         <ul class="space-y-2.5">
           {['La Experiencia', 'Filosofía', 'Membresías', 'FAQ', 'Contacto'].map(l => (
-            <li><a href="#" class="font-garamond text-sm text-bone opacity-50 hover:opacity-90 transition-opacity focus-visible:opacity-100 focus-visible:outline-none focus-visible:underline focus-visible:decoration-gold">{l}</a></li>
+            <li><a href="#" class="font-garamond text-sm text-bone opacity-50 hover:opacity-90 transition-opacity break-words focus-visible:opacity-100 focus-visible:outline-none focus-visible:underline focus-visible:decoration-gold">{l}</a></li>
           ))}
         </ul>
       </div>
@@ -41,7 +41,7 @@
         <p class="font-sans text-xs tracking-widest uppercase text-gold opacity-60 mb-5">Contacto</p>
         <ul class="space-y-3">
           <li class="font-garamond text-sm text-bone opacity-50">
-            Lun–Vie 9:00–20:00 h<br />Sáb 9:00–18:00 h<br />Dom 10:00–17:00 h
+            <span class="block">Lun–Vie 9:00–20:00 h</span><span class="block">Sáb 9:00–18:00 h</span><span class="block">Dom 10:00–17:00 h</span>
           </li>
           {/* TODO: replace with real WhatsApp */}
           <li><a href="https://wa.me/521XXXXXXXXXX" class="font-garamond text-sm text-bone opacity-50 hover:opacity-90 transition-opacity focus-visible:opacity-100 focus-visible:outline-none focus-visible:underline focus-visible:decoration-gold">WhatsApp — TODO</a></li>
@@ -54,7 +54,7 @@
 
     <!-- Bottom bar -->
     <div class="border-t border-bone border-opacity-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="font-garamond text-xs text-bone opacity-30">
+      <p class="font-garamond text-xs text-bone opacity-30 break-words">
         © 2025 Sherry Luxury Beauty House. Todos los derechos reservados.
       </p>
       <p class="font-sans text-xs text-bone opacity-20 tracking-widest uppercase">
