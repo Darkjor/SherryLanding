@@ -1,6 +1,15 @@
 ---
 import Button from './ui/Button.astro';
 import GoldDivider from './ui/GoldDivider.astro';
+import { getSiteSettings } from '../lib/content';
+
+const settings = await getSiteSettings();
+const whatsappDigits = settings.whatsapp.replace(/\D/g, '');
+const whatsappHref = whatsappDigits
+  ? `https://wa.me/${whatsappDigits}`
+  : 'https://wa.me/521XXXXXXXXXX';
+const address = settings.address || 'Zapopan, Jalisco';
+const email = settings.email || 'hola@sherry.mx';
 ---
 
 <section id="cta" class="section-padding bg-burgundy">
@@ -15,10 +24,9 @@ import GoldDivider from './ui/GoldDivider.astro';
     </p>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-      <!-- TODO: Replace with real WhatsApp number -->
-      <Button href="https://wa.me/521XXXXXXXXXX" variant="gold">
+      <span data-booking><Button href={whatsappHref} variant="gold">
         Reservar por WhatsApp
-      </Button>
+      </Button></span>
       <Button href="#membresias" variant="ghost">
         Ver membresías
       </Button>
@@ -26,16 +34,14 @@ import GoldDivider from './ui/GoldDivider.astro';
 
     <!-- Contact info -->
     <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center border-t border-bone border-opacity-10 pt-12">
-      <!-- TODO: Replace with real address -->
       <p class="font-garamond text-sm text-bone opacity-50 break-all">
-        · [Dirección en Zapopan, Jalisco] — TODO
+        · {address}
       </p>
       <p class="font-garamond text-sm text-bone opacity-50 break-all">
         Lun–Vie 9–20h · Sáb 9–18h · Dom 10–17h
       </p>
-      <!-- TODO: Replace with real email -->
       <p class="font-garamond text-sm text-bone opacity-50 break-all">
-        · [email@sherry.mx] — TODO
+        · {email}
       </p>
     </div>
   </div>

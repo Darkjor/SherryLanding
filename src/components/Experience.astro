@@ -2,7 +2,9 @@
 import SectionLabel from './ui/SectionLabel.astro';
 import GoldDivider from './ui/GoldDivider.astro';
 import Button from './ui/Button.astro';
-import { gestures } from '../data/gestures';
+import { getGestures } from '../lib/content';
+
+const gestures = await getGestures();
 ---
 
 <section id="experiencia" class="section-padding bg-burgundy">

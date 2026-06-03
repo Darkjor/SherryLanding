@@ -1,7 +1,9 @@
 ---
 import SectionLabel from './ui/SectionLabel.astro';
 import GoldDivider from './ui/GoldDivider.astro';
-import { principles } from '../data/philosophy';
+import { getPrinciples } from '../lib/content';
+
+const principles = await getPrinciples();
 ---
 
 <section class="section-padding bg-bone-dark">

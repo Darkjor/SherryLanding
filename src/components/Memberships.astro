@@ -2,7 +2,9 @@
 import SectionLabel from './ui/SectionLabel.astro';
 import GoldDivider from './ui/GoldDivider.astro';
 import Button from './ui/Button.astro';
-import { memberships } from '../data/memberships';
+import { getMemberships } from '../lib/content';
+
+const memberships = await getMemberships();
 ---
 
 <section id="membresias" class="section-padding bg-bone">

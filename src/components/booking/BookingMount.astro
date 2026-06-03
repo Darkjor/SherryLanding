@@ -1,0 +1,33 @@
+---
+/**
+ * Sherry — Montaje del formulario de reserva en la landing.
+ *
+ * Renderiza el island BookingDialog UNA sola vez y enlaza, vía un script ligero,
+ * cualquier elemento con [data-booking] para que al hacer clic dispare el evento
+ * global `sherry:book` que abre el dialogo. Asi los CTAs existentes conservan su
+ * estilo y su href como fallback (preventDefault solo si Supabase responde).
+ */
+import BookingDialog from './BookingDialog.tsx';
+import { getSiteSettings } from '../../lib/content';
+
+const settings = await getSiteSettings();
+const whatsapp = settings.whatsapp ?? '';
+---
+
+<BookingDialog client:load whatsapp={whatsapp} />
+
+<script>
+  function bindBooking() {
+    const triggers = document.querySelectorAll('[data-booking]');
+    triggers.forEach((el) => {
+      if (el.getAttribute('data-booking-bound') === '1') return;
+      el.setAttribute('data-booking-bound', '1');
+      el.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.dispatchEvent(new CustomEvent('sherry:book'));
+      });
+    });
+  }
+  bindBooking();
+  document.addEventListener('astro:page-load', bindBooking);
+</script>

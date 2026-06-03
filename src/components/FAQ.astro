@@ -1,7 +1,9 @@
 ---
 import SectionLabel from './ui/SectionLabel.astro';
 import GoldDivider from './ui/GoldDivider.astro';
-import { faqItems } from '../data/faq';
+import { getFaq } from '../lib/content';
+
+const faqItems = await getFaq();
 ---
 
 <section id="faq" class="section-padding bg-bone-dark">

@@ -1,6 +1,6 @@
-# Sherry Landing — Seguimiento del Proyecto
+# Sherry Landing + Sherry Studio — Seguimiento del Proyecto
 
-> Última actualización: 2026-05-31
+> Última actualización: 2026-06-03
 
 ---
 
@@ -8,12 +8,21 @@
 
 | Área | Estado |
 |------|--------|
-| Build & Deploy | ✅ Funcionando en GitHub Pages |
-| Diseño visual | ✅ Polish completo (2 pasadas) |
-| Tipografía responsive | ✅ Todos los breakpoints corregidos |
-| Textos que se salen | ✅ Corregido — break-words global + overflow-x hidden |
-| Padding en orillas | ✅ Corregido — px-4 sm:px-6 lg:px-10 |
-| Datos reales | ❌ Pendiente (ver abajo) |
+| Landing build & deploy | ✅ GitHub Pages |
+| Diseño / tipografía responsive | ✅ Polish completo |
+| **Sherry Studio (admin tipo Fresha)** | ✅ Construido — rama `feat/admin-panel` |
+| Backend Supabase (schema/RLS/seed/edge fn) | ✅ Código listo — falta que el usuario cree el proyecto (ver SETUP.md) |
+| Auth (login valery, guards, lockout) | ✅ |
+| Módulos: agenda, reservas, clientes, servicios, membresías, equipo, ventas, reportes, contenido | ✅ |
+| Reserva online en la landing | ✅ BookingDialog montado |
+| Datos reales (contacto/testimonios) | ❌ Pendiente — ahora se llenan desde /admin/contenido |
+
+### Sherry Studio — pasos para activarlo
+1. Crear proyecto gratis en Supabase (ver `SETUP.md`).
+2. Correr `supabase/migrations/0001_schema.sql`, `0002_rls.sql`, `seed.sql`.
+3. Crear usuario `valery@sherry.local` / `valery` (Auto Confirm).
+4. Pegar `PUBLIC_SUPABASE_URL` + `PUBLIC_SUPABASE_ANON_KEY` en `.env` y en GitHub secrets.
+5. (Opcional) desplegar edge function `publish` + secretos GitHub para el botón "Publicar".
 
 ---
 

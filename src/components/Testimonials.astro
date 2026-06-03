@@ -1,7 +1,9 @@
 ---
 import SectionLabel from './ui/SectionLabel.astro';
 import GoldDivider from './ui/GoldDivider.astro';
-import { testimonials } from '../data/testimonials';
+import { getTestimonials } from '../lib/content';
+
+const testimonials = await getTestimonials();
 
 const stats = [
   { value: '+90%', label: 'NPS objetivo' },

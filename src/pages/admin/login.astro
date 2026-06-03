@@ -1,0 +1,25 @@
+---
+/**
+ * Sherry Studio — Ruta de inicio de sesión.
+ *
+ * Documento HTML mínimo y dedicado: NO usa el layout/animaciones de la
+ * landing de marketing. Importa el stylesheet global (tokens + Tailwind) y
+ * monta el formulario como island React. Marcado noindex.
+ */
+import LoginForm from '../../components/admin/LoginForm.tsx';
+import '../../styles/global.css';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <title>Iniciar sesión · Sherry Studio</title>
+  </head>
+  <body>
+    <LoginForm client:load />
+  </body>
+</html>

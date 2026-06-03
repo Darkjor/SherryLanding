@@ -1,0 +1,12 @@
+---
+/**
+ * Sherry Studio — Dashboard del panel.
+ * Patrón establecido: AdminLayout + un island React (AdminPage + módulo).
+ */
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import DashboardEntry from '../../components/admin/entries/DashboardEntry.tsx';
+---
+
+<AdminLayout title="Dashboard">
+  <DashboardEntry client:load />
+</AdminLayout>

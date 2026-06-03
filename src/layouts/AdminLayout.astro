@@ -1,0 +1,42 @@
+---
+/**
+ * Sherry Studio — Layout del panel (documento HTML dedicado).
+ *
+ * NO usa el BaseLayout de marketing ni sus animaciones. Documento mínimo en
+ * español, marcado noindex, con el stylesheet global (tokens + Tailwind).
+ *
+ * Patrón de uso: cada página del admin pasa un `title` y renderiza en el slot
+ * UN island React que se envuelve con <AdminPage active="..."> (ver
+ * src/components/admin/AdminPage.tsx). Ejemplo de página:
+ *
+ *   ---
+ *   import AdminLayout from '../../layouts/AdminLayout.astro';
+ *   import ClientesEntry from '../../components/admin/entries/ClientesEntry';
+ *   ---
+ *   <AdminLayout title="Clientes">
+ *     <ClientesEntry client:load />
+ *   </AdminLayout>
+ */
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href={`${base}favicon.svg`} />
+    <title>{title} · Sherry Studio</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

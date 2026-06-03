@@ -1,0 +1,8 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import ClientesEntry from '../../components/admin/crm/ClientesEntry.tsx';
+---
+
+<AdminLayout title="Clientes">
+  <ClientesEntry client:load />
+</AdminLayout>

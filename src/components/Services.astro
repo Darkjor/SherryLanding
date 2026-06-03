@@ -2,7 +2,9 @@
 import SectionLabel from './ui/SectionLabel.astro';
 import GoldDivider from './ui/GoldDivider.astro';
 import Button from './ui/Button.astro';
-import { services } from '../data/services';
+import { getServices } from '../lib/content';
+
+const services = await getServices();
 ---
 
 <section id="servicios" class="section-padding bg-bone-dark">

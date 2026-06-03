@@ -1,4 +1,14 @@
 ---
+import { getSiteSettings } from '../lib/content';
+
+const settings = await getSiteSettings();
+const whatsappDigits = settings.whatsapp.replace(/\D/g, '');
+const whatsappHref = whatsappDigits
+  ? `https://wa.me/${whatsappDigits}`
+  : 'https://wa.me/521XXXXXXXXXX';
+const instagramHandle = settings.instagram || '@sherrymexico';
+const instagramUser = instagramHandle.replace(/^@/, '');
+const instagramHref = `https://instagram.com/${instagramUser}`;
 ---
 
 <footer class="bg-burgundy-dark border-t border-bone border-opacity-10 border-t border-gold/20 py-16 px-4 sm:px-6 lg:px-10">
@@ -41,12 +51,10 @@
         <p class="font-sans text-xs tracking-widest uppercase text-gold opacity-60 mb-5">Contacto</p>
         <ul class="space-y-3">
           <li class="font-garamond text-sm text-bone opacity-50">
-            <span class="block">Lun–Vie 9:00–20:00 h</span><span class="block">Sáb 9:00–18:00 h</span><span class="block">Dom 10:00–17:00 h</span>
+            {settings.hours.map(h => (<span class="block">{h}</span>))}
           </li>
-          {/* TODO: replace with real WhatsApp */}
-          <li><a href="https://wa.me/521XXXXXXXXXX" class="font-garamond text-sm text-bone opacity-50 hover:opacity-90 transition-opacity focus-visible:opacity-100 focus-visible:outline-none focus-visible:underline focus-visible:decoration-gold">WhatsApp — TODO</a></li>
-          {/* TODO: replace with real Instagram handle */}
-          <li><a href="https://instagram.com/sherrymexico" class="font-garamond text-sm text-bone opacity-50 hover:opacity-90 transition-opacity focus-visible:opacity-100 focus-visible:outline-none focus-visible:underline focus-visible:decoration-gold">@sherrymexico — TODO</a></li>
+          <li><a href={whatsappHref} class="font-garamond text-sm text-bone opacity-50 hover:opacity-90 transition-opacity focus-visible:opacity-100 focus-visible:outline-none focus-visible:underline focus-visible:decoration-gold">WhatsApp</a></li>
+          <li><a href={instagramHref} class="font-garamond text-sm text-bone opacity-50 hover:opacity-90 transition-opacity focus-visible:opacity-100 focus-visible:outline-none focus-visible:underline focus-visible:decoration-gold">{instagramHandle}</a></li>
         </ul>
       </div>
 
